@@ -8,6 +8,7 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);        
         ArrayList<Shape> figuras = new ArrayList<>();
+        int index;
 
         while (true) {
             String buffer = scanner.nextLine(); 
@@ -22,8 +23,19 @@ public class App {
                 Double.parseDouble(cmd[3]), Double.parseDouble(cmd[4])));
             }
             else if (cmd[0].equals("area")) {
-                int index = 0;
+                index = 0;
                 System.out.println("area total: " + figuras.get(index).calcArea());
+                index++;
+            }
+            else if (cmd[0].equals("perimetro")) {
+                index = 0;
+                System.out.println("perimetro: " + figuras.get(index).calcPerimeter());
+                index++;
+            }
+            else if (cmd[0].equals("inside")) {
+                index = 0;
+                System.out.println(figuras.get(index).insideShape(Double.parseDouble(cmd[1]),
+                Double.parseDouble(cmd[2])));
                 index++;
             }
             else {

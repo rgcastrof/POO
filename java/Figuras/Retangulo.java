@@ -19,4 +19,14 @@ public class Retangulo extends Shape {
     protected double calcPerimeter() {
         return 2 * (this.largura.getPonto() + this.altura.getPonto());
     }
+
+    @Override
+    protected boolean insideShape(double x, double y) {
+        double point = x + y;
+
+        if (point <= this.calcArea()) {
+            return true;
+        }
+        return false; 
+    }
 }
